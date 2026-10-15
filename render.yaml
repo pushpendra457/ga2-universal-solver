@@ -1,0 +1,14 @@
+# Render Blueprint - auto-detected when you connect GitHub repo
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: ga2-universal-solver
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn universal_ga2_render_server:app --host 0.0.0.0 --port $PORT --workers 1"
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

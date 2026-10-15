@@ -1,0 +1,5 @@
+# ga2-render-deploy — push ONLY this folder to GitHub
+__pycache__/
+*.pyc
+.venv/
+venv/
